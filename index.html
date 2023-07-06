@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Historical Time Travel</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .time-period-image {
+      width: 200px;
+      height: auto;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
 </head>
 <body>
   <header>
@@ -30,65 +38,16 @@
 
     <section class="time-periods">
       <h2>Explore Different Time Periods</h2>
-      <ul>
-        <li>
-          <a href="ancient-egypt.html">
-            <img src="images/ancientegypt.jpg" alt="Ancient Egypt">
-            <h3>Ancient Egypt</h3>
-          </a>
-        </li>
-
-        <li>
-
-          <a href="medieval-europe.html">
-            <img src="images/medievaleurope.webp" alt="Medieval Europe">
-            <h3>Medieval Europe</h3>
-          </a>
-        </li>
-        
-            <li>
-                <a href="renaissance.html">
-                  <img src="images/renaissance.jpg" alt="Renaissance">
-                  <h3>Renaissance</h3>
-                </a>
-              </li>
-
-              <li>
-            <a href="colonial-america.html">
-              <img src="images/colonialamerica.jpg" alt="Colonial America">
-              <h3>Colonial America</h3>
-            </a>
-          </li>
-
-          <li>
-            <a href="industrial-revolution.html">
-              <img src="images/industrialrevolution.jpg" alt="Industrial Revolution">
-              <h3>Industrial Revolution</h3>
-            </a>
-          </li>
-
-          <li>
-            <a href="world-wars.html">
-              <img src="images/worldwars.jpg" alt="World Wars">
-              <h3>World Wars</h3>
-            </a>
-          </li>
-
-          <li>
-            <a href="modern-era.html">
-              <img src="images/modernera.jpg" alt="Modern Era"">
-              <h3>Modern Era</h3>
-            </a>
-          </li>
-          
-        <!-- Add more time periods with images and descriptions -->
-      </ul>
+      <input type="range" min="0" max="6" value="0" class="slider">
+      <br>
+      <img src="images/ancientegypt.jpg" alt="Time Period Image" class="time-period-image">
+      
     </section>
   </main>
 
   <footer>
     <p>&copy; 2023 Historical Time Travel. All rights reserved.</p>
   </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
