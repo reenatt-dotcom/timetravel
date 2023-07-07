@@ -1,44 +1,50 @@
+$(document).ready(function() {
+  console.log("document ready");
 
-    $(document).ready(function() {
-        console.log("document ready")
-  $('.slider').on('input', function() {
-    var value = $(this).val();
-    var imageUrl = getTimePeriodImageUrl(value);
-    var timePeriodName = getTimePeriodName(value);
+  var sliderValue = 0; // Initial slider value
+  var maxSliderValue = 6; // Maximum slider value
+
+  function showImage(index) {
+    $('.time-period-image').removeClass('active');
+    $('.time-period-image').eq(index).addClass('active');
+  }
+
+  function navigateToPage(value) {
     var linkUrl = getTimePeriodLink(value);
-    $('.time-period-image').attr('src', imageUrl);
-    $('.time-period-name').text(timePeriodName);
-    $('.time-period-link').attr('href', linkUrl);
+    if (linkUrl) {
+      window.location.href = linkUrl;
+    }
+  }
+
+  $('.time-period-link').on('click', function(e) {
+    e.preventDefault();
+    var value = parseInt($(this).attr('data-value'));
+    navigateToPage(value);
   });
+
+  $('#time-period-slider').on('input', function() {
+    var value = parseInt($(this).val());
+    sliderValue = value;
+    showImage(value);
+  });
+
+  function updateSlider() {
+    sliderValue = (sliderValue + 1) % (maxSliderValue + 1);
+    $('#time-period-slider').val(sliderValue);
+    showImage(sliderValue);
+  }
+
+  var intervalDuration = 3000; // Duration between automatic slider updates (in milliseconds)
+  var intervalId = setInterval(updateSlider, intervalDuration);
+
+  $('.time-period-image').on('click', function() {
+    clearInterval(intervalId);
+    var value = parseInt($(this).parent().attr('data-value'));
+    navigateToPage(value);
+  });
+
+  showImage(sliderValue); // Display the first image initially
 });
-
-function getTimePeriodImageUrl(value) {
-  var imageUrls = {
-    0: 'images/ancientegypt.jpg',
-    1: 'images/medievaleurope.webp',
-    2: 'images/renaissance.jpg',
-    3: 'images/colonialamerica.jpg',
-    4: 'images/industrialrevolution.jpg',
-    5: 'images/worldwars.jpg',
-    6: 'images/modernera.jpg'
-    // Add more time periods with their respective image URLs
-  };
-  return imageUrls[value];
-}
-
-function getTimePeriodName(value) {
-  var timePeriodNames = {
-    0: 'Ancient Egypt',
-    1: 'Medieval Europe',
-    2: 'Renaissance',
-    3: 'Colonial America',
-    4: 'Industrial Revolution',
-    5: 'World Wars',
-    6: 'Modern Era'
-    // Add more time periods with their respective names
-  };
-  return timePeriodNames[value];
-}
 
 function getTimePeriodLink(value) {
   var linkUrls = {
