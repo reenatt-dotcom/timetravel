@@ -30,10 +30,11 @@ nav ul {
   list-style-type: none;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 nav ul li {
-  margin-right: 20px;
+  margin: 0 10px; /* Adjusted for smaller screens */
 }
 
 nav ul li a {
@@ -53,13 +54,13 @@ main {
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 2.5rem; /* Use rem for better scalability */
   color: #333;
   margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 1rem;
   color: #666;
 }
 
@@ -68,7 +69,7 @@ main {
 }
 
 .time-periods h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -95,13 +96,9 @@ main {
 }
 
 .time-periods li h3 {
-  font-size: 18px;
+  font-size: 1rem;
   margin-bottom: 5px;
 }
-
-
-
-
 
 .slider-container {
   text-align: center;
@@ -111,7 +108,7 @@ main {
 .time-period-image-container {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .time-period-link {
@@ -119,8 +116,9 @@ main {
 }
 
 .time-period-image {
-  width: 600px; /* Adjust the width as per your requirement */
-  height: 450px; /* Adjust the height as per your requirement */
+  width: 100%; /* Use 100% for responsiveness */
+  max-width: 600px; /* Maintain a max width */
+  height: auto; /* Maintain aspect ratio */
   cursor: pointer;
   display: none;
 }
@@ -130,11 +128,44 @@ main {
 }
 
 .time-period-name {
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   margin-top: 10px;
 }
-.time-period-image2 {
-  width: 600px; /* Adjust the width as per your requirement */
-  height: 450px; /* Adjust the height as per your requirement */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .time-periods h2 {
+    font-size: 1.25rem;
+  }
+
+  nav ul li {
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.8rem;
+  }
+
+  .time-periods h2 {
+    font-size: 1rem;
+  }
+
+  .time-period-name {
+    font-size: 0.9rem;
+  }
 }
