@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Historical Time Travel</title>
   <link rel="stylesheet" href="styles.css">
-  
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
 </head>
 <body>
   <header>
@@ -33,40 +31,39 @@
 
     <section class="time-periods">
       <h2>Explore Different Time Periods</h2>
+      
+      <!-- Slider -->
       <div class="slider-container">
         <input type="range" min="0" max="6" value="0" class="slider" id="time-period-slider">
       </div>
+
+      <!-- Images to be controlled by slider -->
       <div class="time-period-image-container">
         <a href="#" class="time-period-link" data-value="0">
-          <img src="images/ancientegypt.jpg" alt="Ancient Egypt" class="time-period-image">
+          <img src="images/ancientegypt.jpg" alt="Ancient Egypt" class="time-period-image" data-index="0">
         </a>
         <a href="#" class="time-period-link" data-value="1">
-          <img src="images/medievaleurope.webp" alt="Medieval Europe" class="time-period-image">
+          <img src="images/medievaleurope.webp" alt="Medieval Europe" class="time-period-image" data-index="1">
         </a>
         <a href="#" class="time-period-link" data-value="2">
-          <img src="images/renaissance.jpg" alt="Renaissance" class="time-period-image">
+          <img src="images/renaissance.jpg" alt="Renaissance" class="time-period-image" data-index="2">
         </a>
         <a href="#" class="time-period-link" data-value="3">
-          <img src="images/colonialamerica.jpg" alt="Colonial America" class="time-period-image">
+          <img src="images/colonialamerica.jpg" alt="Colonial America" class="time-period-image" data-index="3">
         </a>
         <a href="#" class="time-period-link" data-value="4">
-          <img src="images/industrialrevolution.jpg" alt="Industrial Revolution" class="time-period-image">
+          <img src="images/industrialrevolution.jpg" alt="Industrial Revolution" class="time-period-image" data-index="4">
         </a>
         <a href="#" class="time-period-link" data-value="5">
-          <img src="images/worldwars.jpg" alt="World Wars" class="time-period-image">
+          <img src="images/worldwars.jpg" alt="World Wars" class="time-period-image" data-index="5">
         </a>
         <a href="#" class="time-period-link" data-value="6">
-          <img src="images/modernera.jpg" alt="Modern Era" class="time-period-image">
+          <img src="images/modernera.jpg" alt="Modern Era" class="time-period-image" data-index="6">
         </a>
       </div>
     </section>
-    
-    
-    
-    
   </main>
 
-  
   <script src="script.js"></script>
 </body>
 </html>
